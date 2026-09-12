@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Product
 from rest_framework.viewsets import ModelViewSet
 from .serializers import ProductSerializer
+from datetime import date
 # Create your views here.
 
 class ProductViewSet(ModelViewSet):
@@ -26,8 +27,14 @@ def colado(request, precio=None, activo=None):
     
     print(activo)
 
+    objeto = {
+        'producto': 'Camiseta 212',
+        'precio': 129,
+        'fecha': date.today()
+    }
+
     # regresar una vista visual
-    return render(request,'products/index.html', product)
+    return render(request,'products/index.html', objeto)
 
     # regresar un json plano    
     # return JsonResponse(product, safe=False)

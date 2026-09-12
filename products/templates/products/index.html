@@ -6,9 +6,37 @@
     <title>vista Inicial</title>
 </head>
 <body>
-        Hola que tal {{name}}
+    <h2>Articulo: {{producto}}</h2>
     <p>
-        stock: {{stock}}
+        Precio: <b>${{precio}}</b>
     </p>
+    <p>
+        Fecha: <b>{{fecha}}</b>
+    </p>
+    
+    # renderizado condicional
+    
+    {% if precio >= 50  %}
+    <p style="background-color: red;">
+        Muy caro
+    </p>
+    {% else %}
+    <p style="background-color: blue;">
+        Barato
+    </p>
+    {% endif %}
+
+    {% comment %}
+    Este es mi comentario
+    {% endcomment %}
+
+    # ciclos en templates
+    
+    <ul>
+        {% for n in '123456'%}
+        <li>{{ n }}</li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
