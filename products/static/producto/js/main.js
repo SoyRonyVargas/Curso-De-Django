@@ -1,0 +1,1 @@
+console.log('Cargando js de django al navegador')

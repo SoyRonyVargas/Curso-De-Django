@@ -1,5 +1,5 @@
 from django.urls import include, path
-from .views import hello , status , colado
+from .views import hello , status , colado , detalleProducto
 from .views import ProductViewSet
 from rest_framework.routers import DefaultRouter
 
@@ -17,5 +17,6 @@ urlpatterns = [
     path('hello/', hello),
     path('status/', status),
     path('colado/', colado),
+    path('producto/', detalleProducto),
     path('', include(router.urls)),
 ] 

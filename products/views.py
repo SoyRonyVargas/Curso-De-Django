@@ -41,6 +41,15 @@ def colado(request, precio=None, activo=None):
     
     # return HttpResponse("Hola mundo desde colado.")
 
+def detalleProducto(request):
+
+    product = Product.objects.filter(id=100).first()
+
+    print('product')
+    print(product)
+
+    return render(request, 'products/detalle.html', {'product': product})
+
 def status(request):
     return JsonResponse({
         "status": "OK",
